@@ -1,13 +1,10 @@
 const Discord = require('discord.js')
 const command = require('./command')
 const client = new Discord.Client()
-const math = require ('mathjs')
 const config = require('./config.json')
 const privateMessage = require('./private-message')
 const poll = require('./poll')
 const mongo = require('./mongo')
-const randomPuppy = require('random-puppy');
-const welcome = require('./welcome')
 const moment = require ('moment')
 const dateformat = require('dateformat')
 
@@ -40,8 +37,8 @@ client.on('ready', async () => {
   console.log(content)
   console.log('╚════════════════════════════════════════════════════════════════════════════════════╝	')
 })
-  //console.log('Phoenix has logged in.',
-  //client.user.setActivity('With Your MOM', { type: "PLAYING"}
+  
+ 
   
  
 
@@ -87,7 +84,7 @@ command(client, ['ping', 'test'], (message) => {
 
   command(client, 'status', (message) => {
     const content = message.content.replace('?status ', '')
-    // "!status hello world" -> "hello world"
+    
 
     client.user.setPresence({
       activity: {
@@ -347,8 +344,8 @@ message.channel.send(embed)
         
         // Date
         let x = Date.now() - message.guild.createdAt;
-        let h = Math.floor(x / 86400000) // 86400000, 5 digits-zero.
-        let created = dateformat(message.guild.createdAt); // Install "dateformat" first.
+        let h = Math.floor(x / 86400000) 
+        let created = dateformat(message.guild.createdAt); 
         
         const embed = new Discord.MessageEmbed()
         .setColor('#FF0000')
@@ -421,7 +418,7 @@ message.channel.send(embed)
         return rand[Math.floor(Math.random()*rand.length)];
     }
     
-    // Later in the code:
+    
      command(client, '8ball', (message) => {
     
         message.channel.send(doMagic8BallVoodoo());
@@ -472,7 +469,7 @@ message.reply(`I rate you **${rating}/100**`);
 
 
       command(client,'die',(message) => {
-        let devs = ['699547766782951504'] //CHANGE THIS TO YOUR ID(S)
+        let devs = ['699547766782951504'] 
         
         if(!devs.includes(message.author.id)) {
       return true
@@ -509,14 +506,14 @@ command(client, 'avatar', (message) => {
 
 command(client, 'meme', (message) => { 
   const { MessageEmbed } = require('discord.js');
-const somethingRandom = require('some-random-cat').Random // Import the package...
+const somethingRandom = require('some-random-cat').Random //You needa import this package first
 const subreddits = [
     "meme",
     "memes",
     "dankmemes",
-    // You can add as many as you wish...
+   
 ]
-let randomSubReddit = subreddits[Math.floor(Math.random() * subreddits.length)] // Generates a random subreddit from the array...
+let randomSubReddit = subreddits[Math.floor(Math.random() * subreddits.length)] 
 somethingRandom.getMeme(randomSubReddit).then(res => {
     const embed = new MessageEmbed()
     .setTitle(res.title)
@@ -590,16 +587,16 @@ command(client, 'invite' , (message) => {
 command(client, 'userinfo', (message) => {
   let user = message.mentions.users.first() || message.author;
     
-  let x = Date.now() - user.createdAt; // Since the user created their account.
-  let y = Date.now() - message.guild.members.cache.get(user.id).joinedAt; // Since the user joined the server.
-  let created = Math.floor(x / 86400000); // 5 digits-zero.
+  let x = Date.now() - user.createdAt; 
+  let y = Date.now() - message.guild.members.cache.get(user.id).joinedAt; 
+  let created = Math.floor(x / 86400000); 
   let joined = Math.floor(y / 86400000);
   
   const member = message.guild.member(user);
   let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
-  let createdate = moment.utc(user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss"); // User Created Date
-  let joindate = moment.utc(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss"); // User Joined the Server Date
-  let avatar = user.avatarURL({size: 2048}); // Use 2048 for high quality avatar.
+  let createdate = moment.utc(user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss"); 
+  let joindate = moment.utc(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss");
+  let avatar = user.avatarURL({size: 2048}); 
   
   const embed = new Discord.MessageEmbed()
   .setAuthor(user.tag, avatar)
@@ -612,7 +609,7 @@ command(client, 'userinfo', (message) => {
   .addField("Joined Server Date", `${joindate} \n **${joined}** days ago`,)
 
   
-  message.channel.send(embed); // Let's see if it's working.
+  message.channel.send(embed); 
 })
 
 
