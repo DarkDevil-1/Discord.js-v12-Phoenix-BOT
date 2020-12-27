@@ -1,0 +1,22 @@
+{
+  "name": "phoenix-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dateformat": "^4.4.1",
+    "discord-math": "^1.0.5",
+    "discord.js": "^12.5.1",
+    "discord.js-commando": "^0.10.0",
+    "mathjs": "^8.1.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.8",
+    "random-puppy": "^1.1.0",
+    "some-random-cat": "^2.2.0"
+  }
+}
