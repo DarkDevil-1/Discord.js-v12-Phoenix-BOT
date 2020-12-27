@@ -161,15 +161,8 @@ command(client, 'createtextchannel', (message) => {
         {
           name : '?rateme',
           value:'Rates you out of 100'
-        },
-        {
-          name : '?pp',
-          value:'Shows your pp size'
-        },
-        { 
-          name : '?gayrate',
-          value:'Shows how gay you are'
         }
+        
 
    )
     message.channel.send(embed)
@@ -436,7 +429,7 @@ message.channel.send(embed)
      })
 
      const responseObject = {
-      "ayy": "***Ayy Nibba***",
+      "ayy": "***Ayy DooD***",
       "what": "***Nani***",
       "lol": "**LMAO**",
       "sunil":"**S U N I L**"
@@ -470,13 +463,7 @@ message.channel.send(embed)
         
       })
      
-    command(client,'pp',(message) => {
-
-
-      message.channel.send(`8${'='.repeat(3,10,15,4,1,9,2,5,13,7,0)}D`);
     
- 
- })
 
 command(client, 'rateme' , (message) =>  {
   var rating = Math.floor(Math.random() * 100) + 1;
@@ -494,17 +481,7 @@ message.reply(`I rate you **${rating}/100**`);
       }
     })
 
-command(client, 'gayrate', (message) => {
-   
-  var gay = Math.floor(Math.random() * 100) + 1;
-  const embed = new Discord.MessageEmbed()
-   .setTitle(`🏳️‍🌈You are ${gay}% GAY🏳️‍🌈`)
-   .setColor('#FF0000')
-   
 
-message.channel.send(embed)
-
-})
 
 
 command(client,'slowmode',(message) => {
@@ -595,19 +572,7 @@ command(client, 'unmute',async (message) => {
   message.channel.send(`${user} has been unmuted`)
 }) 
 
-command(client, 'purge', async (message) => { 
-  
-  const args = message.content.split(' ');
-  
-  if (!message.member.hasPermission("MANAGE_MESSAGES") || !message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have a permissions to do this.");
-  if (isNaN(args[0])) return message.channel.send("Please input a valid number.") 
-  if (args[0] > 100) return message.channel.send("Insert the number less than 100.") 
-  if (args[0] < 2) return message.channel.send("Insert the number more than 1.")
-  await message.delete()
-  await message.channel.bulkDelete(args[0])
-  .then(messages => message.channel.send(`Deleted ${messages.size}/${args[0]} messages.`)).then(d => d.delete({timeout: 10000})) 
-  .catch(() => message.channel.send("Something went wrong, while deleting messages."))
-})
+
 
 command(client, 'invite' , (message) => {
   const embed = new Discord.MessageEmbed()
