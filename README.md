@@ -6,6 +6,9 @@ Its the basic command handler for my bot so that i can know what commands are be
 [index.js]
 This is the main file of my Bot where all codes are present 
 
+[mongo.js]
+I coded this file for connecting mongo to my bot
+
 [package.json]
 Here all my npm pacakages i installed are visible
 
