@@ -16,6 +16,6 @@ Here all my npm pacakages i installed are visible
 This is for adding reactions to a message if the channel id is present in this file
 
 [private-message.js]
-I have coded this file so that we can easily use it in index.js to send a dm reply if the author is replying in dm
+I have coded this file so that we can easily use it in index.js to send a Direct message reply if the author is Direct Messaging the bot
 
 
